@@ -11,12 +11,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Connexion à MongoDB Atlas
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('✅ Connexion MongoDB réussie'))
   .catch((err) => console.error('❌ Erreur MongoDB :', err));
+
 
 // Middlewares
 app.use(cors());
